@@ -23,6 +23,24 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Visual Studio files
+.vs/
+.vscode/
+*.vsix
+*.vsixmanifest
+*.vssettings
+*.vspscc
+*.vspx
+*.sap
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.vsidx
+*.vsinx
+*.VC.db
+*.VC.VC.opendb
+
 # .NET Core
 project.lock.json
 project.fragment.lock.json

@@ -1,0 +1,487 @@
+{
+    "Routes": [
+        // InnoClinic.AuthorizationAPI (https://localhost:7238)
+        {
+            "UpstreamPathTemplate": "/gateway/auth/register",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Auth/register",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7238
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/auth/login",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Auth/login",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7238
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/auth/ ",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Auth/logout",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7238
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/auth/logout-worker",
+            "UpstreamHttpMethod": [ "POST" ],
+            "DownstreamPathTemplate": "/api/Auth/logout-worker",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7238
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+
+        // InnoClinic.ProfilesAPI (https://localhost:7126)
+        // --- DoctorController ---
+        {
+            "UpstreamPathTemplate": "/gateway/profiles/doctors",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Doctor",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7126
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "Limit": 5
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/profiles/doctors/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/Doctor/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7126
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "Limit": 5
+            }
+        },
+        // --- PatientController ---
+        {
+            "UpstreamPathTemplate": "/gateway/profiles/patients",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Patient",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7126
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "Limit": 5
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/profiles/patients/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/Patient/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7126
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "Limit": 5
+            }
+        },
+        // --- ReceptionistController ---
+        {
+            "UpstreamPathTemplate": "/gateway/profiles/receptionists",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Receptionist",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7126
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "Limit": 5
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/profiles/receptionists/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/Receptionist/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7126
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" },
+            "RateLimitOptions": {
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "Limit": 5
+            }
+        },
+
+        // InnoClinic.ServicesAPI (https://localhost:7205)
+        //==================================================
+        {
+            "UpstreamPathTemplate": "/gateway/services/categories",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/ServiceCategory",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/categories/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/ServiceCategory/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/categories/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/ServiceCategory/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/categories/{id}/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/ServiceCategory/{id}/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        // --- ServiceController ---
+        {
+            "UpstreamPathTemplate": "/gateway/services/entries",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Service",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/entries/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/Service/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/entries/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Service/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/entries/{id}/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Service/{id}/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        // --- SpecializationController ---
+        {
+            "UpstreamPathTemplate": "/gateway/services/specializations",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Specialization",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/specializations/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/Specialization/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/specializations/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Specialization/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/services/specializations/{id}/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Specialization/{id}/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7205
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+
+        // InnoClinic.OfficesAPI (https://localhost:7289)
+        {
+            "UpstreamPathTemplate": "/gateway/offices",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Office",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7289
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/offices/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE", "PATCH" ],
+            "DownstreamPathTemplate": "/api/Office/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7289
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+
+        // InnoClinic.AppointmentsAPI (https://localhost:7105)
+        // --- AppointmentController ---
+        {
+            "UpstreamPathTemplate": "/gateway/appointments",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/Appointment",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/Appointment/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/approve/{id}",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "DownstreamPathTemplate": "/api/Appointment/approve/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/with-dependencies",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/with-dependencies",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/with-dependencies/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/Appointment/with-dependencies/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        // --- AppointmentResultController ---
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/results",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "DownstreamPathTemplate": "/api/AppointmentResult",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/results/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+            "DownstreamPathTemplate": "/api/AppointmentResult/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/results/with-appointment/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/AppointmentResult/with-appointment/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/appointments/results/by-doctor/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "DownstreamPathTemplate": "/api/AppointmentResult/by-doctor-id/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7105
+                }
+            ],
+            "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7001",
+        "RateLimitOptions": {
+            "HttpStatusCode": 429,
+            "QuotaExceededMessage": "Too many requests. Please try again later.",
+            "DisableRateLimitHeaders": false,
+            "ClientIdHeader": "ClientId"
+        }
+    }
+}

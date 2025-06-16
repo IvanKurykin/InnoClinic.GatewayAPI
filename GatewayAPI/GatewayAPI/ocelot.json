@@ -2,7 +2,7 @@
     "Routes": [
         // InnoClinic.AuthorizationAPI (https://localhost:7238)
         {
-            "UpstreamPathTemplate": "/gateway/auth/register",
+            "UpstreamPathTemplate": "/auth/register",
             "UpstreamHttpMethod": [ "POST" ],
             "DownstreamPathTemplate": "/api/Auth/register",
             "DownstreamScheme": "https",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "UpstreamPathTemplate": "/gateway/auth/login",
+            "UpstreamPathTemplate": "/auth/login",
             "UpstreamHttpMethod": [ "POST" ],
             "DownstreamPathTemplate": "/api/Auth/login",
             "DownstreamScheme": "https",
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "UpstreamPathTemplate": "/gateway/auth/ ",
+            "UpstreamPathTemplate": "/auth/logout ",
             "UpstreamHttpMethod": [ "POST" ],
             "DownstreamPathTemplate": "/api/Auth/logout",
             "DownstreamScheme": "https",
@@ -39,7 +39,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/auth/logout-worker",
+            "UpstreamPathTemplate": "/auth/logout-worker",
             "UpstreamHttpMethod": [ "POST" ],
             "DownstreamPathTemplate": "/api/Auth/logout-worker",
             "DownstreamScheme": "https",
@@ -55,7 +55,7 @@
         // InnoClinic.ProfilesAPI (https://localhost:7126)
         // --- DoctorController ---
         {
-            "UpstreamPathTemplate": "/gateway/profiles/doctors",
+            "UpstreamPathTemplate": "/profiles/doctors",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Doctor",
             "DownstreamScheme": "https",
@@ -73,7 +73,7 @@
             }
         },
         {
-            "UpstreamPathTemplate": "/gateway/profiles/doctors/{id}",
+            "UpstreamPathTemplate": "/profiles/doctors/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/Doctor/{id}",
             "DownstreamScheme": "https",
@@ -92,7 +92,7 @@
         },
         // --- PatientController ---
         {
-            "UpstreamPathTemplate": "/gateway/profiles/patients",
+            "UpstreamPathTemplate": "/profiles/patients",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Patient",
             "DownstreamScheme": "https",
@@ -110,7 +110,7 @@
             }
         },
         {
-            "UpstreamPathTemplate": "/gateway/profiles/patients/{id}",
+            "UpstreamPathTemplate": "/profiles/patients/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/Patient/{id}",
             "DownstreamScheme": "https",
@@ -129,7 +129,7 @@
         },
         // --- ReceptionistController ---
         {
-            "UpstreamPathTemplate": "/gateway/profiles/receptionists",
+            "UpstreamPathTemplate": "/profiles/receptionists",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Receptionist",
             "DownstreamScheme": "https",
@@ -147,7 +147,7 @@
             }
         },
         {
-            "UpstreamPathTemplate": "/gateway/profiles/receptionists/{id}",
+            "UpstreamPathTemplate": "/profiles/receptionists/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/Receptionist/{id}",
             "DownstreamScheme": "https",
@@ -168,7 +168,7 @@
         // InnoClinic.ServicesAPI (https://localhost:7205)
         //==================================================
         {
-            "UpstreamPathTemplate": "/gateway/services/categories",
+            "UpstreamPathTemplate": "/services/categories",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/ServiceCategory",
             "DownstreamScheme": "https",
@@ -181,7 +181,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/categories/{id}",
+            "UpstreamPathTemplate": "/services/categories/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/ServiceCategory/{id}",
             "DownstreamScheme": "https",
@@ -207,7 +207,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/categories/{id}/with-dependencies",
+            "UpstreamPathTemplate": "/services/categories/{id}/with-dependencies",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/ServiceCategory/{id}/with-dependencies",
             "DownstreamScheme": "https",
@@ -221,7 +221,7 @@
         },
         // --- ServiceController ---
         {
-            "UpstreamPathTemplate": "/gateway/services/entries",
+            "UpstreamPathTemplate": "/services/entries",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Service",
             "DownstreamScheme": "https",
@@ -234,7 +234,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/entries/{id}",
+            "UpstreamPathTemplate": "/services/entries/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/Service/{id}",
             "DownstreamScheme": "https",
@@ -247,7 +247,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/entries/with-dependencies",
+            "UpstreamPathTemplate": "/services/entries/with-dependencies",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/Service/with-dependencies",
             "DownstreamScheme": "https",
@@ -260,7 +260,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/entries/{id}/with-dependencies",
+            "UpstreamPathTemplate": "/services/entries/{id}/with-dependencies",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/Service/{id}/with-dependencies",
             "DownstreamScheme": "https",
@@ -274,7 +274,7 @@
         },
         // --- SpecializationController ---
         {
-            "UpstreamPathTemplate": "/gateway/services/specializations",
+            "UpstreamPathTemplate": "/services/specializations",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Specialization",
             "DownstreamScheme": "https",
@@ -287,7 +287,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/specializations/{id}",
+            "UpstreamPathTemplate": "/services/specializations/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/Specialization/{id}",
             "DownstreamScheme": "https",
@@ -300,7 +300,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/specializations/with-dependencies",
+            "UpstreamPathTemplate": "/services/specializations/with-dependencies",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/Specialization/with-dependencies",
             "DownstreamScheme": "https",
@@ -313,7 +313,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/services/specializations/{id}/with-dependencies",
+            "UpstreamPathTemplate": "/services/specializations/{id}/with-dependencies",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/Specialization/{id}/with-dependencies",
             "DownstreamScheme": "https",
@@ -328,7 +328,7 @@
 
         // InnoClinic.OfficesAPI (https://localhost:7289)
         {
-            "UpstreamPathTemplate": "/gateway/offices",
+            "UpstreamPathTemplate": "/offices",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Office",
             "DownstreamScheme": "https",
@@ -341,7 +341,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/offices/{id}",
+            "UpstreamPathTemplate": "/offices/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE", "PATCH" ],
             "DownstreamPathTemplate": "/api/Office/{id}",
             "DownstreamScheme": "https",
@@ -357,7 +357,7 @@
         // InnoClinic.AppointmentsAPI (https://localhost:7105)
         // --- AppointmentController ---
         {
-            "UpstreamPathTemplate": "/gateway/appointments",
+            "UpstreamPathTemplate": "/appointments",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/Appointment",
             "DownstreamScheme": "https",
@@ -370,7 +370,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/{id}",
+            "UpstreamPathTemplate": "/appointments/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/Appointment/{id}",
             "DownstreamScheme": "https",
@@ -383,7 +383,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/approve/{id}",
+            "UpstreamPathTemplate": "/appointments/approve/{id}",
             "UpstreamHttpMethod": [ "PUT" ],
             "DownstreamPathTemplate": "/api/Appointment/approve/{id}",
             "DownstreamScheme": "https",
@@ -396,7 +396,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/with-dependencies",
+            "UpstreamPathTemplate": "/appointments/with-dependencies",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/Appointment/with-dependencies",
             "DownstreamScheme": "https",
@@ -409,7 +409,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/with-dependencies/{id}",
+            "UpstreamPathTemplate": "/appointments/with-dependencies/{id}",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/Appointment/with-dependencies/{id}",
             "DownstreamScheme": "https",
@@ -423,7 +423,7 @@
         },
         // --- AppointmentResultController ---
         {
-            "UpstreamPathTemplate": "/gateway/appointments/results",
+            "UpstreamPathTemplate": "/appointments/results",
             "UpstreamHttpMethod": [ "GET", "POST" ],
             "DownstreamPathTemplate": "/api/AppointmentResult",
             "DownstreamScheme": "https",
@@ -436,7 +436,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/results/{id}",
+            "UpstreamPathTemplate": "/appointments/results/{id}",
             "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
             "DownstreamPathTemplate": "/api/AppointmentResult/{id}",
             "DownstreamScheme": "https",
@@ -449,7 +449,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/results/with-appointment/{id}",
+            "UpstreamPathTemplate": "/appointments/results/with-appointment/{id}",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/AppointmentResult/with-appointment/{id}",
             "DownstreamScheme": "https",
@@ -462,7 +462,7 @@
             "AuthenticationOptions": { "AuthenticationProviderKey": "Bearer" }
         },
         {
-            "UpstreamPathTemplate": "/gateway/appointments/results/by-doctor/{id}",
+            "UpstreamPathTemplate": "/appointments/results/by-doctor/{id}",
             "UpstreamHttpMethod": [ "GET" ],
             "DownstreamPathTemplate": "/api/AppointmentResult/by-doctor-id/{id}",
             "DownstreamScheme": "https",
